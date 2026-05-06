@@ -1,0 +1,13 @@
+# Core detection
+ultralytics>=8.0.0          # YOLOv8 (auto-downloads COCO weights on first run)
+opencv-python-headless>=4.8 # For servers/Docker without display; use opencv-python on desktop
+
+# MQTT
+paho-mqtt>=1.6.1
+
+# Environment / config
+python-dotenv>=1.0.0
+
+# Utilities (already pulled in by ultralytics, listed explicitly for clarity)
+numpy>=1.24
+Pillow>=9.5
