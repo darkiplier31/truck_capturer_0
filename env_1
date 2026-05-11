@@ -1,0 +1,39 @@
+# ─── Stream ───────────────────────────────────────────────────────────────────
+# Local file path OR RTSP/HTTP stream URL – detector auto-detects which one
+# Examples:
+#   STREAM_URL = "C:/Users/user/Videos/truk.mp4"
+#   STREAM_URL = "D:/truck/proj_4_split/capturer/truck_image_detector/truk.mp4"
+#   STREAM_URL = "rtsp://admin:pass@192.168.10.2:554/Streaming/Channels/101"
+STREAM_URL = "D:\truck\proj_4_split\capturer\truck_image_detector\truk.mp4"
+
+# ─── MQTT ─────────────────────────────────────────────────────────────────────
+MQTT_BROKER = "192.168.110.12"
+MQTT_PORT   = 1883
+MQTT_USER   = ""
+MQTT_PASS   = ""
+MQTT_TOPIC  = "/truck/plat4"
+
+# ─── Model ────────────────────────────────────────────────────────────────────
+# Path to YOLOv8 weights. On first run, ultralytics will auto-download yolov8n.pt
+# if internet is available. You can also point this at a custom-trained model.
+MODEL_PATH = "yolov8n.pt"
+
+# ─── Detection thresholds ─────────────────────────────────────────────────────
+CONF_THRESHOLD    = 0.4    # minimum YOLO confidence (0.0–1.0)
+MIN_VEHICLE_AREA  = 0.05   # minimum fraction of frame area (0.0–1.0)
+
+# ─── Capture / scoring ────────────────────────────────────────────────────────
+FRAME_BUFFER_SIZE = 30     # how many consecutive frames to collect before scoring
+COOLDOWN_SECONDS  = 5      # minimum seconds between MQTT publishes (avoid spam)
+
+# ─── Image enhancement ────────────────────────────────────────────────────────
+# Higher CONTRAST_ALPHA = more contrast (try 1.5–2.5)
+CONTRAST_ALPHA = 1.8
+# CONTRAST_BETA shifts brightness (positive = brighter)
+CONTRAST_BETA  = 10
+# CLAHE (adaptive equalisation) settings
+CLAHE_CLIP     = 3.0
+CLAHE_TILE     = 8
+
+# JPEG encode quality for MQTT payload (1–100)
+JPEG_QUALITY   = 85
